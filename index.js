@@ -6,6 +6,12 @@ const {products} = require('./products')
 const {testimonials} = require('./testimonials')
 const {faq} = require('./faq')
 
+const cors = require('cors')
+
+app.use(cors({
+    origin:["http://localhost:5173"]
+}));
+
 app.use(express.static('public'))   
 
 app.get('/', (req, res)=> {
